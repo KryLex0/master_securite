@@ -1,3 +1,7 @@
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+<script src="securite.js"></script>
+
+
 <div class="header">
     <link rel="stylesheet" href="devoir_securite.css">
     <h1 class="title">Inscription</h1>
@@ -11,25 +15,40 @@
                 <tbody>
                     <tr>
                         <td><label class="label_name">Identifiant</label></td>
-                        <td><input type="text" name="login" placeholder="nom d'utilisateur" required/></td>
+                        <td><input type="text" id="login" name="login" placeholder="nom d'utilisateur" required/></td>
                     </tr>
                     <tr>
                         <td><label class="label_name">Mot de passe</label></td>
-                        <td><input type="password" name="password" placeholder="**********" required/></td>
+                        <td><input type="password" id="password" name="password" placeholder="**********" required/><span id="erreur-password" class="erreur"> Trop Court!</span></td>
                     </tr>
                     <tr>
                         <td><label class="label_name">Confirmez votre mot de passe</label></td>
-                        <td><input type="password" name="password_confirmation" placeholder="**********" required/></td>
+                        <td><input type="password" id="password_confirmation" name="password_confirmation" placeholder="**********" required/><span id="erreur-conf" class="erreur"> Différents!</span></td>
+                    </tr>
+                    <tr>
+                        <td><a href="accueil.php" style="background:none;color:blue;text-decoration: underline;">Déjà un compte? Cliquez ici!</a></td>
+                        <td><input style="margin: 10px;" type="submit" value="Inscription" id="submitForm" onClick="return functionVerif()" disabled="true"/></td>
                     </tr>
                 </tbody>
             </table>
 
-            <a href="accueil.php" style="background:none;color:blue;text-decoration: underline;">Déjà un compte? Cliquez ici!</a>
-
-            <input style="margin-top: 70px;" type="submit" value="Inscription"/>
         </form>
     </div>
 </div>
+
+
+<script>
+    $('#password').on('input', function() {
+        var pass1 = document.getElementById("password").value
+    });
+    $('#password_confirmation').on('input', function() {
+        var pass2 = document.getElementById("password_confirmation").value
+    });
+
+    
+
+
+</script>
 
 <?php
 

@@ -5,7 +5,7 @@
     <div class="formulaire">
         <form method="POST" action="accueil.php" id="pageConnexion">
 
-            <table>
+            <table class="inputData">
                 <tbody>
                     <tr>
                         <td><label class="label_name">Identifiant</label></td>
@@ -15,20 +15,23 @@
                         <td><label class="label_name">Mot de passe</label></td>
                         <td><input type="password" name="password" placeholder="**********" required/></td>
                     </tr>
+                    <tr>
+                        <td><a href="formulaire_creation_compte.php" style="background:none;color:blue;text-decoration: underline;">Pas de compte? Cliquez ici!</a></td>
+                        <td><input style="margin: 10px;" type="submit" value="Connexion" onClick="verifInput()"/></td>
+                    </tr>
                 </tbody>
             </table>
 
-            <a href="formulaire_creation_compte.php" style="background:none;color:blue;text-decoration: underline;">Pas de compte? Cliquez ici!</a>
-
-            <input style="margin-top: 70px;" type="submit" value="Connexion" onClick="verifInput()"/>
         </form>
     </div>
 </div>
 
 <script>
+
+    
     function verifInput(){
         var login = document.getElementByName("login");
-        if(login.)
+        console.log(login);
     }
 
 </script>
