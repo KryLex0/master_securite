@@ -1,14 +1,14 @@
 
 $(document).ready(function(){
 
-	$('#login').keyup(function(event){
-			var texte=$("#login").val();
+	$('#login_signin').keyup(function(event){
+			var texte=$("#login_signin").val();
 			
-			texte=texte.toLowerCase();
-			$('#login').val(texte.replace(/ /g,"-"));   //remplace l'espace par un trait
+			//texte=texte.toLowerCase();
+			$('#login_signin').val(texte.replace(/ /g,"-"));   //remplace l'espace par un trait
 	});
 
-	$('#password').keyup(function(event){   
+	$('#password_signin').keyup(function(event){   
         //supprime le dernier character s'il s'agit d'un espace
         /*
         if(event.key == " "){
@@ -16,16 +16,16 @@ $(document).ready(function(){
         }
         */
         //supprime tout les espaces mêmes lorsque l'utilisateur reste appuyé sur espace
-        $('#password').val($('#password').val().replace(/ +?/g, ''));
+        $('#password_signin').val($('#password_signin').val().replace(/ +?/g, ''));
 
-        var password=$("#password").val();
-		var password_confirmation=$("#password_confirmation").val();
+        var password=$("#password_signin").val();
+		var password_confirmation=$("#password_confirmation_signin").val();
 		$('#erreur-password').toggle(password.length<6);
 		$('#erreur-conf').toggle(password !== password_confirmation);
         verifyVisibility();
 	});
 
-	$('#password_confirmation').keyup(function(event){
+	$('#password_confirmation_signin').keyup(function(event){
         //supprime le dernier character s'il s'agit d'un espace
         /*
         if(event.key == " "){
@@ -33,11 +33,11 @@ $(document).ready(function(){
         }
         */
         //supprime tout les espaces mêmes lorsque l'utilisateur reste appuyé sur espace
-        $('#password_confirmation').val($('#password_confirmation').val().replace(/ +?/g, ''));
+        $('#password_confirmation_signin').val($('#password_confirmation_signin').val().replace(/ +?/g, ''));
 
 
-		var password=$("#password").val();
-		var password_confirmation=$("#password_confirmation").val();
+		var password=$("#password_signin").val();
+		var password_confirmation=$("#password_confirmation_signin").val();
 		$('#erreur-conf').toggle(password !== password_confirmation);
         verifyVisibility();
 	});
@@ -58,12 +58,36 @@ function verifyVisibility(){
     }
 }
 
+
+
 function functionVerif(){
-    var pass1 = document.getElementById("password").value
-    var pass2 = document.getElementById("password_confirmation").value
+    var pass1 = document.getElementById("password_signin").value
+    var pass2 = document.getElementById("password_confirmation_signin").value
 
     if(pass1 !== pass2){
         alert("La confirmation du mot de passe est différente du mot de passe saisi. Veuillez recommencer.");
         return false;
     }
+}
+
+function resetInputLogin(){
+    
+    var loginInput = document.getElementById("login");
+    var passwordInput = document.getElementById("password");
+
+    loginInput.value = "";
+    passwordInput.value = "";
+    
+}
+
+function resetInputSignin(){
+    
+    var loginInput = document.getElementById("login_signin");
+    var passwordInput = document.getElementById("password_signin");
+    var passwordConfirmationInput = document.getElementById("password_confirmation_signin");
+
+    loginInput.value = "";
+    passwordInput.value = "";
+    passwordConfirmationInput.value = "";
+    
 }

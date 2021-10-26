@@ -1,9 +1,8 @@
 <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
 <script src="securite.js"></script>
-
+<link rel="stylesheet" href="devoir_securite.css">
 
 <div class="header">
-    <link rel="stylesheet" href="devoir_securite.css">
     <h1 class="title">Inscription</h1>
 
     <div class="formulaire">
@@ -15,19 +14,20 @@
                 <tbody>
                     <tr>
                         <td><label class="label_name">Identifiant</label></td>
-                        <td><input type="text" id="login" name="login" placeholder="nom d'utilisateur" required/></td>
+                        <td><input type="text" id="login_signin" name="login_signin" placeholder="nom d'utilisateur" required/></td>
                     </tr>
                     <tr>
                         <td><label class="label_name">Mot de passe</label></td>
-                        <td><input type="password" id="password" name="password" placeholder="**********" required/><span id="erreur-password" class="erreur"> Trop Court!</span></td>
+                        <td><input type="password" id="password_signin" name="password_signin" placeholder="**********" required/><td id="erreur-password" class="erreur"> Trop Court!</td></td>
                     </tr>
                     <tr>
                         <td><label class="label_name">Confirmez votre mot de passe</label></td>
-                        <td><input type="password" id="password_confirmation" name="password_confirmation" placeholder="**********" required/><span id="erreur-conf" class="erreur"> Différents!</span></td>
+                        <td><input type="password" id="password_confirmation_signin" name="password_confirmation_signin" placeholder="**********" required/><td id="erreur-conf" class="erreur"> Différents!</td></td>
                     </tr>
                     <tr>
                         <td><a href="accueil.php" style="background:none;color:blue;text-decoration: underline;">Déjà un compte? Cliquez ici!</a></td>
                         <td><input style="margin: 10px;" type="submit" value="Inscription" id="submitForm" onClick="return functionVerif()" disabled="true"/></td>
+                        <td><button style="margin: 10px;" type="button" onClick="resetInputSignin()">Vider saisie</button></td>
                     </tr>
                 </tbody>
             </table>
@@ -37,18 +37,6 @@
 </div>
 
 
-<script>
-    $('#password').on('input', function() {
-        var pass1 = document.getElementById("password").value
-    });
-    $('#password_confirmation').on('input', function() {
-        var pass2 = document.getElementById("password_confirmation").value
-    });
-
-    
-
-
-</script>
 
 <?php
 
@@ -76,8 +64,8 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         $mysqlClient = new PDO('mysql:host=localhost;dbname=master_securite;charset=utf8', 'root', 'root');
 
 
-        $login = $_POST["login"];
-        $password = password_hash($_POST["password"], PASSWORD_DEFAULT);
+        $login = $_POST["login_signin"];
+        $password = password_hash($_POST["password_signin"], PASSWORD_DEFAULT);
         
         $sqlQuery = "SELECT * FROM devoir1 WHERE login_user='".$login."'";
         $result = $mysqlClient->prepare($sqlQuery);

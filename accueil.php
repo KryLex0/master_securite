@@ -1,5 +1,8 @@
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+<script src="securite.js"></script>
+<link rel="stylesheet" href="devoir_securite.css">
+
 <div class="header">
-    <link rel="stylesheet" href="devoir_securite.css">
     <h1 class="title">Connexion</h1>
 
     <div class="formulaire">
@@ -9,15 +12,16 @@
                 <tbody>
                     <tr>
                         <td><label class="label_name">Identifiant</label></td>
-                        <td><input type="text" name="login" placeholder="nom d'utilisateur" required/></td>
+                        <td><input type="text" id="login" name="login" placeholder="nom d'utilisateur" required/></td>
                     </tr>
                     <tr>
                         <td><label class="label_name">Mot de passe</label></td>
-                        <td><input type="password" name="password" placeholder="**********" required/></td>
+                        <td><input type="password" id="password" name="password" placeholder="**********" required/></td>
                     </tr>
                     <tr>
                         <td><a href="formulaire_creation_compte.php" style="background:none;color:blue;text-decoration: underline;">Pas de compte? Cliquez ici!</a></td>
-                        <td><input style="margin: 10px;" type="submit" value="Connexion" onClick="verifInput()"/></td>
+                        <td><input style="margin: 10px;" type="submit" value="Connexion"/></td>
+                        <td><button style="margin: 10px;" type="button" onClick="resetInputLogin()">Vider saisie</button></td>
                     </tr>
                 </tbody>
             </table>
@@ -26,15 +30,7 @@
     </div>
 </div>
 
-<script>
 
-    
-    function verifInput(){
-        var login = document.getElementByName("login");
-        console.log(login);
-    }
-
-</script>
 
 <?php
 
