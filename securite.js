@@ -69,25 +69,3 @@ function functionVerif(){
         return false;
     }
 }
-
-function resetInputLogin(){
-    
-    var loginInput = document.getElementById("login");
-    var passwordInput = document.getElementById("password");
-
-    loginInput.value = "";
-    passwordInput.value = "";
-    
-}
-
-function resetInputSignin(){
-    
-    var loginInput = document.getElementById("login_signin");
-    var passwordInput = document.getElementById("password_signin");
-    var passwordConfirmationInput = document.getElementById("password_confirmation_signin");
-
-    loginInput.value = "";
-    passwordInput.value = "";
-    passwordConfirmationInput.value = "";
-    
-}

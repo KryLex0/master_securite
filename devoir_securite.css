@@ -22,3 +22,10 @@
 .erreur{
     color:red;
 }
+
+.centerImg{
+    width: 10%;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}

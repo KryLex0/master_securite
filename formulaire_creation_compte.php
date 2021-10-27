@@ -3,6 +3,7 @@
 <link rel="stylesheet" href="devoir_securite.css">
 
 <div class="header">
+    <img src="signin.png" class="centerImg">
     <h1 class="title">Inscription</h1>
 
     <div class="formulaire">
@@ -27,7 +28,7 @@
                     <tr>
                         <td><a href="accueil.php" style="background:none;color:blue;text-decoration: underline;">Déjà un compte? Cliquez ici!</a></td>
                         <td><input style="margin: 10px;" type="submit" value="Inscription" id="submitForm" onClick="return functionVerif()" disabled="true"/></td>
-                        <td><button style="margin: 10px;" type="button" onClick="resetInputSignin()">Vider saisie</button></td>
+                        <td><button style="margin: 10px;" type="reset">Vider saisie</button></td>
                     </tr>
                 </tbody>
             </table>

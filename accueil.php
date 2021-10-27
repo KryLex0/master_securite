@@ -2,7 +2,10 @@
 <script src="securite.js"></script>
 <link rel="stylesheet" href="devoir_securite.css">
 
+
+
 <div class="header">
+    <img src="login.png" class="centerImg">
     <h1 class="title">Connexion</h1>
 
     <div class="formulaire">
@@ -21,7 +24,7 @@
                     <tr>
                         <td><a href="formulaire_creation_compte.php" style="background:none;color:blue;text-decoration: underline;">Pas de compte? Cliquez ici!</a></td>
                         <td><input style="margin: 10px;" type="submit" value="Connexion"/></td>
-                        <td><button style="margin: 10px;" type="button" onClick="resetInputLogin()">Vider saisie</button></td>
+                        <td><button style="margin: 10px;" type="reset">Vider saisie</button></td>
                     </tr>
                 </tbody>
             </table>
