@@ -38,20 +38,6 @@
 <?php
 
 
-/*
-//hash du mdp
-$tempval = password_hash("test", PASSWORD_DEFAULT);
-
-
-//ajout d'une donnee dans la bdd
-$sqlQuery = "INSERT INTO devoir1(login_user, password_user) VALUES(
-    'test', '".$tempval."'
-)";
-$recipesStatement = $mysqlClient->prepare($sqlQuery);
-$recipesStatement->execute();
-
-echo("donnee bien ajouté \n");
-*/
 
 
 // Vérifie qu'il provient d'un formulaire
@@ -65,6 +51,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         $password = $_POST["password"];
         
         $sqlQuery = "SELECT * FROM devoir1 WHERE login_user='".$login."'";
+
         $result = $mysqlClient->prepare($sqlQuery);
         $result->execute();
         $users = $result->fetchAll();
